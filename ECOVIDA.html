@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EcoVida: ideias simples para um planeta mais sustentável.">
+  <title>EcoVida | Um futuro melhor começa agora</title>
+  <style>
+    :root {
+      --verde: #176b3a;
+      --verde-escuro: #104d29;
+      --verde-claro: #e5f4e9;
+      --fundo: #f7faf7;
+      --texto: #263b2c;
+      --branco: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    header {
+      background: var(--verde);
+      color: var(--branco);
+      padding: 17px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 12px #00000018;
+    }
+    .logo { font-size: 1.55rem; font-weight: 800; white-space: nowrap; }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { text-decoration: none; font-weight: 700; font-size: .95rem; }
+    nav a:hover { text-decoration: underline; }
+    .hero {
+      padding: 100px 7% 90px;
+      text-align: center;
+      background: linear-gradient(135deg, #dff3e5, #f5fbf6);
+    }
+    .selo {
+      display: inline-block;
+      background: #c8e9d1;
+      color: var(--verde-escuro);
+      padding: 7px 15px;
+      border-radius: 30px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    h1 { color: var(--verde-escuro); font-size: clamp(2.2rem, 5vw, 3.7rem); line-height: 1.12; max-width: 850px; margin: 0 auto 20px; }
+    .hero p { max-width: 680px; margin: 0 auto 28px; font-size: 1.15rem; }
+    .botao {
+      display: inline-block;
+      background: var(--verde);
+      color: white;
+      padding: 13px 23px;
+      border: 0;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background .2s, transform .2s;
+    }
+    .botao:hover { background: var(--verde-escuro); transform: translateY(-2px); }
+    section { padding: 72px 7%; scroll-margin-top: 82px; }
+    .titulo { text-align: center; color: var(--verde); font-size: 2rem; margin-bottom: 14px; }
+    .subtitulo { text-align: center; max-width: 760px; margin: 0 auto 35px; }
+    .sobre-grid, .cards, .publico-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1100px;
+      margin: 35px auto 0;
+    }
+    .info, .card {
+      background: white;
+      border-radius: 15px;
+      padding: 27px;
+      box-shadow: 0 5px 18px #183c2410;
+      border: 1px solid #e6eee7;
+    }
+    .info h3, .card h3 { color: var(--verde); margin: 10px 0; }
+    .icone { font-size: 2.4rem; }
+    .faixa { background: var(--verde-claro); }
+    .diferenciais {
+      max-width: 850px;
+      margin: 25px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+    .diferencial { background: white; padding: 17px; border-radius: 10px; }
+    .contato { background: #e5f4e9; }
+    form {
+      max-width: 520px;
+      margin: 28px auto 0;
+      display: grid;
+      gap: 14px;
+      background: white;
+      padding: 28px;
+      border-radius: 15px;
+      box-shadow: 0 5px 18px #183c2410;
+    }
+    label { font-weight: 700; }
+    input, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #bdcdbf;
+      border-radius: 8px;
+      font: inherit;
+      margin-top: 5px;
+    }
+    input:focus, textarea:focus { outline: 2px solid #7bbd8c; border-color: var(--verde); }
+    textarea { min-height: 105px; resize: vertical; }
+    #mensagem { text-align: center; font-weight: 700; color: var(--verde-escuro); min-height: 28px; }
+    footer { background: #123f25; color: white; text-align: center; padding: 30px 7%; }
+    footer a { color: #d4f0dc; margin: 0 8px; }
+    .redes { margin: 10px 0; }
+    @media (max-width: 760px) {
+      header { flex-direction: column; }
+      nav { justify-content: center; gap: 13px; }
+      .sobre-grid, .cards, .publico-grid { grid-template-columns: 1fr; }
+      .diferenciais { grid-template-columns: 1fr; }
+      section { padding: 55px 6%; }
+      .hero { padding: 75px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="#inicio" aria-label="EcoVida - início">🌱 EcoVida</a>
+    <nav aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#solucao">Solução</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <span class="selo">♻️ Sustentabilidade para todos</span>
+      <h1>Pequenas atitudes, grandes mudanças!</h1>
+      <p>A EcoVida ajuda pessoas e comunidades a adotarem hábitos mais sustentáveis para construir um futuro melhor para o planeta.</p>
+      <a class="botao" href="#solucao">Conheça nossa solução</a>
+    </section>
+
+    <section id="sobre">
+      <h2 class="titulo">Quem somos?</h2>
+      <p class="subtitulo">A EcoVida é uma empresa fictícia criada com o objetivo de tornar a sustentabilidade mais simples e acessível no dia a dia.</p>
+      <div class="sobre-grid">
+        <article class="info">
+          <div class="icone">🌍</div>
+          <h3>Nossa missão</h3>
+          <p>Incentivar escolhas conscientes e mostrar que cada pessoa pode contribuir para cuidar do meio ambiente.</p>
+        </article>
+        <article class="info">
+          <div class="icone">🎯</div>
+          <h3>Nosso objetivo</h3>
+          <p>Compartilhar orientações práticas sobre reciclagem, economia de recursos e preservação da natureza.</p>
+        </article>
+        <article class="info">
+          <div class="icone">🤝</div>
+          <h3>Nosso público</h3>
+          <p>Jovens, famílias, escolas, comunidades e empresas que desejam aprender e praticar hábitos sustentáveis.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="faixa" id="solucao">
+      <h2 class="titulo">O problema e a nossa solução</h2>
+      <p class="subtitulo"><strong>O problema:</strong> muitas pessoas têm dúvidas sobre como separar o lixo, economizar água e energia e diminuir o desperdício. A falta de informação pode dificultar atitudes mais sustentáveis.</p>
+      <p class="subtitulo"><strong>Nossa solução:</strong> a EcoVida reúne dicas fáceis, informações educativas e ideias que podem ser colocadas em prática em casa, na escola e no trabalho.</p>
+    </section>
+
+    <section id="servicos">
+      <h2 class="titulo">O que oferecemos?</h2>
+      <p class="subtitulo">Conheça três maneiras pelas quais a EcoVida ajuda a transformar informação em atitude.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="icone">♻️</div>
+          <h3>Reciclagem consciente</h3>
+          <p>Orientações para separar papel, plástico, vidro e metal e entender a importância da coleta seletiva.</p>
+        </article>
+        <article class="card">
+          <div class="icone">💧</div>
+          <h3>Economia de água</h3>
+          <p>Dicas simples para evitar o desperdício de água durante atividades do cotidiano.</p>
+        </article>
+        <article class="card">
+          <div class="icone">🌳</div>
+          <h3>Preservação ambiental</h3>
+          <p>Ideias para reduzir o lixo, reutilizar materiais e valorizar os espaços verdes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="faixa" id="diferenciais">
+      <h2 class="titulo">Por que escolher a EcoVida?</h2>
+      <p class="subtitulo">Nosso diferencial é apresentar a sustentabilidade de um jeito simples, próximo e possível para todos.</p>
+      <div class="diferenciais">
+        <div class="diferencial">✅ Linguagem fácil de entender</div>
+        <div class="diferencial">✅ Dicas práticas para o dia a dia</div>
+        <div class="diferencial">✅ Conteúdo educativo</div>
+        <div class="diferencial">✅ Incentivo à participação da comunidade</div>
+      </div>
+    </section>
+
+    <section class="contato" id="contato">
+      <h2 class="titulo">Fale com a EcoVida</h2>
+      <p class="subtitulo">Preencha o formulário para demonstrar seu interesse em conhecer nossas iniciativas.</p>
+      <form id="formulario">
+        <div>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required minlength="2">
+        </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+        <div>
+          <label for="assunto">Mensagem (opcional)</label>
+          <textarea id="assunto" name="assunto" placeholder="Escreva sua mensagem"></textarea>
+        </div>
+        <button class="botao" type="submit">Enviar mensagem</button>
+        <p id="mensagem" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <h2>🌱 EcoVida</h2>
+    <p>Pequenas atitudes, grandes mudanças!</p>
+    <div class="redes">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </div>
+    <small>© 2026 EcoVida. Todos os direitos reservados. Empresa fictícia para fins escolares.</small>
+  </footer>
+
+  <script>
+    const formulario = document.getElementById("formulario");
+    const mensagem = document.getElementById("mensagem");
+
+    formulario.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+
+      if (nome.length < 2 || !email) {
+        mensagem.textContent = "Por favor, preencha seu nome e e-mail corretamente.";
+        return;
+      }
+
+      mensagem.textContent = `Obrigado, ${nome}! Sua mensagem foi registrada nesta demonstração.`;
+      formulario.reset();
+    });
+  </script>
+</body>
+</html>
